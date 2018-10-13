@@ -7,8 +7,8 @@ class Search extends Component{
             <div style={{display: 'flex', justifyContent: 'center', paddingTop: '5%'}}>
                 <TextField 
                     placeholder="Enter Drink or ingredient(s)"
-                    fullWidth="true"
-                    autoFocus="true"
+                    fullWidth={true}
+                    autoFocus={true}
                 />
             </div>
         );

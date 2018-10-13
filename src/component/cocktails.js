@@ -6,6 +6,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import {Highlight }from 'react-instantsearch-dom';
+
+
 let id = 0;
 function createData(name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6) {
     id += 1;
@@ -19,46 +22,58 @@ const rows = [
     createData('155 Belmont', 'Cocktail', 'Dark rum', 'Light rum', 'Rumple Minze','151 proof rum'),
   ];
 
-function Cocktails(props) {
-    const { classes } = props;
-  
-    return (
-      <Paper>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Drink</TableCell>
-              <TableCell>Type</TableCell>
-              <TableCell>ingredient1</TableCell>
-              <TableCell>ingredient2</TableCell>
-              <TableCell>ingredient3</TableCell>
-              <TableCell>ingredient4</TableCell>
-              <TableCell>ingredient5</TableCell>
-              <TableCell>ingredient6</TableCell>
-             </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map(row => {
-              return (
-                <TableRow key={row.id}>
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell>{row.type}</TableCell>
-                  <TableCell>{row.ingredient1}</TableCell>
-                  <TableCell>{row.ingredient2}</TableCell>
-                  <TableCell>{row.ingredient3}</TableCell>
-                  <TableCell>{row.ingredient4}</TableCell>
-                  <TableCell>{row.ingredient5}</TableCell>
-                  <TableCell>{row.ingredient6}</TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Paper>
-    );
-  }
-  
+// function Cocktails(props) {
+//     const { classes } = props;
+    
+//     return (
+//       <Paper>
+//         <Table>
+//           <TableHead>
+//             <TableRow>
+//               <TableCell>Drink</TableCell>
+//               <TableCell>Type</TableCell>
+//               <TableCell>ingredient1</TableCell>
+//               <TableCell>ingredient2</TableCell>
+//               <TableCell>ingredient3</TableCell>
+//               <TableCell>ingredient4</TableCell>
+//               <TableCell>ingredient5</TableCell>
+//               <TableCell>ingredient6</TableCell>
+//              </TableRow>
+//           </TableHead>
+//           <TableBody>
+//             {rows.map(row => {
+//               return (
+//                 <TableRow key={row.id}>
+//                   <TableCell component="th" scope="row">
+//                     {row.name}
+//                   </TableCell>
+//                   <TableCell>{row.type}</TableCell>
+//                   <TableCell>{row.ingredient1}</TableCell>
+//                   <TableCell>{row.ingredient2}</TableCell>
+//                   <TableCell>{row.ingredient3}</TableCell>
+//                   <TableCell>{row.ingredient4}</TableCell>
+//                   <TableCell>{row.ingredient5}</TableCell>
+//                   <TableCell>{row.ingredient6}</TableCell>
+//                 </TableRow>
+//               );
+//             })}
+//           </TableBody>
+//         </Table>
+//       </Paper>
+//     );
+//   }
+    function Cocktails(props){
+        return(
+            <div>
+                <div className="hit-name">        
+                    <Highlight attribute="name" hit={props.hit} />
+                </div>
+                <div>
+                    {props.hit}
+                </div>
+            </div>
+        )
+    }  
+
 
 export default Cocktails;
