@@ -9,18 +9,18 @@ import Paper from '@material-ui/core/Paper';
 import {Highlight }from 'react-instantsearch-dom';
 
 
-let id = 0;
-function createData(name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6) {
-    id += 1;
-    return { id, name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6};
-  }
-const rows = [
-    createData('\'57 Chevy with a White License Plate', 'Cocktail', 'Creme de Cacao', 'Vodka'),
-    createData('Ice cream sandwich', 'Shot', 'Absolut Kurant', 'Grand Marnier', 'Chambord raspberry liqueur', 'Midori melon liqueur', 'Malibu rum'),
-    createData('110 in the shade', 'Beer', 'Lager', 'Tequila', '151 proof rum', 'Dark Creme de Cacao','Cointreau'),
-    createData('151 Florida Bushwacker', 'Milk / Float / Shake', 'Malibu rum', 'Light rum', 'Vodka','Orange juice'),
-    createData('155 Belmont', 'Cocktail', 'Dark rum', 'Light rum', 'Rumple Minze','151 proof rum'),
-  ];
+// let id = 0;
+// function createData(name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6) {
+//     id += 1;
+//     return { id, name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6};
+//   }
+// const rows = [
+//     createData('\'57 Chevy with a White License Plate', 'Cocktail', 'Creme de Cacao', 'Vodka'),
+//     createData('Ice cream sandwich', 'Shot', 'Absolut Kurant', 'Grand Marnier', 'Chambord raspberry liqueur', 'Midori melon liqueur', 'Malibu rum'),
+//     createData('110 in the shade', 'Beer', 'Lager', 'Tequila', '151 proof rum', 'Dark Creme de Cacao','Cointreau'),
+//     createData('151 Florida Bushwacker', 'Milk / Float / Shake', 'Malibu rum', 'Light rum', 'Vodka','Orange juice'),
+//     createData('155 Belmont', 'Cocktail', 'Dark rum', 'Light rum', 'Rumple Minze','151 proof rum'),
+//   ];
 
 // function Cocktails(props) {
 //     const { classes } = props;
@@ -66,10 +66,7 @@ const rows = [
         return(
             <div>
                 <div className="hit-name">        
-                    <Highlight attribute="name" hit={props.hit} />
-                </div>
-                <div>
-                    {props.hit}
+                    {props.hit.strDrink}
                 </div>
             </div>
         )

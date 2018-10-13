@@ -30,7 +30,7 @@ class App extends Component {
           onSearchStateChange={this.props.onSearchStateChange}
           >
             <Search/>
-            <Hits hitComponent={Hit}/>
+            <Hits hitComponent={Cocktails}/>
 
           </InstantSearch>
 
@@ -41,12 +41,13 @@ class App extends Component {
 }
 
 function Hit(props) {
-  console.log("hitting props in hit");
   console.log(props.hit);
+  console.log(props.hit.strDrink);
   return (
     <div>
       <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit.strDrink} />
+      {props.hit.strDrink}
+        <Highlight attribute="strDrink" hit={props.hit.strDrink} />
       </div>
     </div>
   );
