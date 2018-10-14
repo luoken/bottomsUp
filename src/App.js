@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import {InstantSearch, Hits, Highlight, Configure, SearchBox} from 'react-instantsearch-dom';
+import {InstantSearch, Hits, Highlight, Configure, SearchBox,
+	ClearRefinements, RefinementList} from 'react-instantsearch-dom';
 // import Search from './component/searchBar';
 // import Cocktail from './component/cocktail';
 import Cocktails from './component/cocktails';
@@ -21,16 +22,26 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div style={{paddingLeft: '20px'}}>
-        <InstantSearch
-          appId={appId}
-          apiKey={apiKey}
+      return (
+	      <div style={{paddingLeft: '20px'}}>
+	      <h1>Bottoms Up</h1>
+	      <InstantSearch
+	  appId={appId}
+	  apiKey={apiKey}
           indexName={indexName}
           onSearchStateChange={this.props.onSearchStateChange}
-          >
-            <SearchBox className='input'/>
-            <Hits hitComponent={Cocktails}/>
+              >
+	      <div className="left-panel">
+	      <ClearRefinements />
+	      <h2>Category</h2>
+	      <RefinementList attribute="strCategory" />
+	      <Configure hitsPerPage={8} />
+	      </div>
+	      <div className="right-panel">
+	      <SearchBox className='input'/>
+	      <Hits hitComponent={Cocktails}/>
+	      </div>
+            
           </InstantSearch>
 
 
