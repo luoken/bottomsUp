@@ -7,9 +7,9 @@ import Cocktails from './component/cocktails';
 
 
 
-const appId='M3OEEU8RL9';
-const apiKey="a8c912614f3096773cb168c43e710bc0";
-const indexName="ingredients_NAME";
+const appId=process.env.REACT_APP_ALGOLIA_KEY
+const apiKey=process.env.REACT_APP_ALGOLIA_APIKEY
+const indexName=process.env.REACT_APP_ALGOLIA_KEY_INDEXNAME
 
 class App extends Component {
   constructor(props){
