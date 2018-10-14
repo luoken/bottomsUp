@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {InstantSearch, Hits, Highlight, Configure, SearchBox,
-	ClearRefinements, RefinementList} from 'react-instantsearch-dom';
+	ClearRefinements, RefinementList, SortBy} from 'react-instantsearch-dom';
 // import Search from './component/searchBar';
 // import Cocktail from './component/cocktail';
 import Cocktails from './component/cocktails';
@@ -39,6 +39,14 @@ class App extends Component {
 	      </div>
 	      <div className="right-panel">
 	      <SearchBox className='input'/>
+	      <SortBy
+	  defaultRefinement="ingredients_NAME"
+	  items={[
+	      {label: "", value: "ingredients_NAME"},
+	      {label: "Name Asc.", value: "ingredients_name_asc"},
+	      {label: "Name Desc.", value: "ingredients_name_desc"}
+	  ]}
+	      />
 	      <Hits hitComponent={Cocktails}/>
 	      </div>
             
