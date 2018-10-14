@@ -18,30 +18,32 @@ class App extends Component {
   render() {
     return (
       <div className="bottomsUp-InstantSearch">
-        <h1 style={{paddingLeft: '1%'}}>Bottoms UP</h1>
         <InstantSearch
           appId="M3OEEU8RL9"
           apiKey="a8c912614f3096773cb168c43e710bc0"
           indexName="ingredients_NAME"
         >
 
-          <div className="left-panel">
+          <div className="left-panel" style={{paddingLeft: '1%'}}>
+            <h1 style={{paddingLeft: '1%', paddingTop: '1%', paddingBottom:'5px'}}>Bottoms UP</h1>
             <ClearRefinements />
-            <h2>Category</h2>
+            <h2 style={{paddingTop:'5px', paddingBottom:'5px'}}>Category</h2>
             <RefinementList attribute="strCategory" />
             <Configure hitsPerPage={8} />
           </div>
-            <div className="right-panel">
-              <div style={{width:'50%'}}>
-                <SearchBox autoFocus='true' style={{width:'50%'}}/>
-              </div>
-                <SortBy
-                  defaultRefinement="ingredients_NAME"
-                  items={[
-                      {label: "Name Asc.", value: "ingredients_NAME"},
-                      {label: "Name Desc.", value: "ingredients_name_desc"}
-                  ]}
-                />
+          <div className="right-panel">
+            <div style={{width:'50%'}}>
+              <SearchBox autoFocus='true' />
+              <SortBy
+              defaultRefinement="ingredients_NAME"
+              items={[
+                  {label: "Name Asc.", value: "ingredients_NAME"},
+                  {label: "Name Desc.", value: "ingredients_name_desc"}
+              ]}
+            />
+            </div>
+
+
             <Hits hitComponent={Cocktails} />
             <Pagination />
           </div>
