@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {InstantSearch, Hits, Highlight} from 'react-instantsearch-dom';
+import {InstantSearch, Hits, Highlight, Configure, SearchBox} from 'react-instantsearch-dom';
 import Search from './component/searchBar';
 // import Cocktail from './component/cocktail';
 import Cocktails from './component/cocktails';
@@ -22,35 +22,22 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingLeft: '20px'}}>
         <InstantSearch
           appId={appId}
           apiKey={apiKey}
           indexName={indexName}
           onSearchStateChange={this.props.onSearchStateChange}
           >
-            <Search/>
+            <SearchBox className='input'/>
             <Hits hitComponent={Cocktails}/>
-
+ 
           </InstantSearch>
 
 
       </div>
     );
   }
-}
-
-function Hit(props) {
-  console.log(props.hit);
-  console.log(props.hit.strDrink);
-  return (
-    <div>
-      <div className="hit-name">
-      {props.hit.strDrink}
-        <Highlight attribute="strDrink" hit={props.hit.strDrink} />
-      </div>
-    </div>
-  );
 }
 
 export default App;

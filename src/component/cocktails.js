@@ -1,76 +1,66 @@
 import React, {Component} from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import 'bulma/css/bulma.css';
+import '../App.css';
 
-import {Highlight }from 'react-instantsearch-dom';
-
-
-// let id = 0;
-// function createData(name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6) {
-//     id += 1;
-//     return { id, name, type, ingredient1, ingredient2, ingredient3,ingredient4,ingredient5,ingredient6};
-//   }
-// const rows = [
-//     createData('\'57 Chevy with a White License Plate', 'Cocktail', 'Creme de Cacao', 'Vodka'),
-//     createData('Ice cream sandwich', 'Shot', 'Absolut Kurant', 'Grand Marnier', 'Chambord raspberry liqueur', 'Midori melon liqueur', 'Malibu rum'),
-//     createData('110 in the shade', 'Beer', 'Lager', 'Tequila', '151 proof rum', 'Dark Creme de Cacao','Cointreau'),
-//     createData('151 Florida Bushwacker', 'Milk / Float / Shake', 'Malibu rum', 'Light rum', 'Vodka','Orange juice'),
-//     createData('155 Belmont', 'Cocktail', 'Dark rum', 'Light rum', 'Rumple Minze','151 proof rum'),
-//   ];
-
-// function Cocktails(props) {
-//     const { classes } = props;
-    
-//     return (
-//       <Paper>
-//         <Table>
-//           <TableHead>
-//             <TableRow>
-//               <TableCell>Drink</TableCell>
-//               <TableCell>Type</TableCell>
-//               <TableCell>ingredient1</TableCell>
-//               <TableCell>ingredient2</TableCell>
-//               <TableCell>ingredient3</TableCell>
-//               <TableCell>ingredient4</TableCell>
-//               <TableCell>ingredient5</TableCell>
-//               <TableCell>ingredient6</TableCell>
-//              </TableRow>
-//           </TableHead>
-//           <TableBody>
-//             {rows.map(row => {
-//               return (
-//                 <TableRow key={row.id}>
-//                   <TableCell component="th" scope="row">
-//                     {row.name}
-//                   </TableCell>
-//                   <TableCell>{row.type}</TableCell>
-//                   <TableCell>{row.ingredient1}</TableCell>
-//                   <TableCell>{row.ingredient2}</TableCell>
-//                   <TableCell>{row.ingredient3}</TableCell>
-//                   <TableCell>{row.ingredient4}</TableCell>
-//                   <TableCell>{row.ingredient5}</TableCell>
-//                   <TableCell>{row.ingredient6}</TableCell>
-//                 </TableRow>
-//               );
-//             })}
-//           </TableBody>
-//         </Table>
-//       </Paper>
-//     );
-//   }
-    function Cocktails(props){
-        return(
+function Cocktails(props){
+    return(
+        <div style={{paddingBottom:'10px'}}>
             <div>
-                <div className="hit-name">        
-                    {props.hit.strDrink}
-                </div>
+              <img src={props.hit.strDrinkThumb} alt={props.hit.strDrink} width="40" height="40"/>
+                <span style={{paddingRight:"40px", paddingLeft: "10px"}}>{props.hit.strDrink}</span>
             </div>
-        )
-    }  
+            <div>
+            </div>
+            <div style={{fontSize: '12px'}}>
+                <span style={{paddingRight:"20px"}}>Ingredients: </span>
+                <span className="Cocktails-Spacing">{props.hit.strCategory}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient1}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient2}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient3}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient4}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient5}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient6}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient7}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient8}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient9}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient10}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient11}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient12}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient13}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient14}</span>
+                <span className="Cocktails-Spacing">{props.hit.strIngredient15}</span>
+            </div>
+        </div>
+    )
+}  
 
 
 export default Cocktails;
+
+
+/*
+            <table className="table">
+                <tbody>
+                    <tr>
+                        <td>{props.hit.strDrink}</td>
+                        <td>{props.hit.strCategory}</td>
+                        <td>{props.hit.strIngredient1}</td>
+                        <td>{props.hit.strIngredient2}</td>
+                        <td>{props.hit.strIngredient3}</td>
+                        <td>{props.hit.strIngredient4}</td>
+                        <td>{props.hit.strIngredient5}</td>
+                        <td>{props.hit.strIngredient6}</td>
+                        <td>{props.hit.strIngredient7}</td>
+                        <td>{props.hit.strIngredient8}</td>
+                        <td>{props.hit.strIngredient9}</td>
+                        <td>{props.hit.strIngredient10}</td>
+                        <td>{props.hit.strIngredient11}</td>
+                        <td>{props.hit.strIngredient12}</td>
+                        <td>{props.hit.strIngredient13}</td>
+                        <td>{props.hit.strIngredient14}</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+*/
