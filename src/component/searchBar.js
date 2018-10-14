@@ -6,7 +6,9 @@ class Search extends Component{
         return(
             <div style={{display: 'flex', justifyContent: 'center', paddingTop: '5%'}}>
                 <TextField 
-                    placeholder="Enter Ingredient"
+                    placeholder="Enter Drink or ingredient(s)"
+                    fullWidth={true}
+                    autoFocus={true}
                 />
             </div>
         );
@@ -14,3 +16,15 @@ class Search extends Component{
 }
 
 export default Search;
+
+
+/*
+    <input
+      type="text"
+      value={currentRefinement}
+      onChange={e => refine(e.target.value)}
+      autoComplete="off"
+      className="form-control"
+      id="q"
+/>
+*/
