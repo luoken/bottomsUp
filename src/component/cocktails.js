@@ -8,12 +8,12 @@ function Cocktails(props){
             <div>
               <img src={props.hit.strDrinkThumb} alt={props.hit.strDrink} width="40" height="40"/>
                 <span style={{paddingRight:"40px", paddingLeft: "10px"}}>{props.hit.strDrink}</span>
+                <span className="Cocktails-Spacing">{props.hit.strCategory}</span>
             </div>
             <div>
             </div>
             <div style={{fontSize: '12px'}}>
                 <span style={{paddingRight:"20px"}}>Ingredients: </span>
-                <span className="Cocktails-Spacing">{props.hit.strCategory}</span>
                 <span className="Cocktails-Spacing">{props.hit.strIngredient1}</span>
                 <span className="Cocktails-Spacing">{props.hit.strIngredient2}</span>
                 <span className="Cocktails-Spacing">{props.hit.strIngredient3}</span>
@@ -36,31 +36,3 @@ function Cocktails(props){
 
 
 export default Cocktails;
-
-
-/*
-            <table className="table">
-                <tbody>
-                    <tr>
-                        <td>{props.hit.strDrink}</td>
-                        <td>{props.hit.strCategory}</td>
-                        <td>{props.hit.strIngredient1}</td>
-                        <td>{props.hit.strIngredient2}</td>
-                        <td>{props.hit.strIngredient3}</td>
-                        <td>{props.hit.strIngredient4}</td>
-                        <td>{props.hit.strIngredient5}</td>
-                        <td>{props.hit.strIngredient6}</td>
-                        <td>{props.hit.strIngredient7}</td>
-                        <td>{props.hit.strIngredient8}</td>
-                        <td>{props.hit.strIngredient9}</td>
-                        <td>{props.hit.strIngredient10}</td>
-                        <td>{props.hit.strIngredient11}</td>
-                        <td>{props.hit.strIngredient12}</td>
-                        <td>{props.hit.strIngredient13}</td>
-                        <td>{props.hit.strIngredient14}</td>
-
-
-                    </tr>
-                </tbody>
-            </table>
-*/

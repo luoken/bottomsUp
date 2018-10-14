@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {InstantSearch, Hits, Highlight, Configure, SearchBox} from 'react-instantsearch-dom';
-import Search from './component/searchBar';
+// import Search from './component/searchBar';
 // import Cocktail from './component/cocktail';
 import Cocktails from './component/cocktails';
 
@@ -31,7 +31,6 @@ class App extends Component {
           >
             <SearchBox className='input'/>
             <Hits hitComponent={Cocktails}/>
- 
           </InstantSearch>
 
 
