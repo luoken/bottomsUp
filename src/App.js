@@ -24,35 +24,31 @@ class App extends Component {
   render() {
       return (
 	      <div style={{paddingLeft: '20px'}}>
-	      <h1>Bottoms Up</h1>
+	      <h1 style={{margin:'5px'}}>Bottoms Up</h1>
 	      <InstantSearch
-	  appId={appId}
-	  apiKey={apiKey}
+          appId={appId}
+          apiKey={apiKey}
           indexName={indexName}
           onSearchStateChange={this.props.onSearchStateChange}
-              >
-	      <div className="left-panel">
-	      <ClearRefinements />
-	      <h2>Category</h2>
-	      <RefinementList attribute="strCategory" />
-	      <Configure hitsPerPage={8} />
+        >
+          <div className="left-panel">
+            <ClearRefinements />
+            <h2 style={{margin: '5px'}}>Category</h2>
+            <RefinementList attribute="strCategory" />
+          </div>
+          <div className="right-panel">
+            <Configure hitsPerPage={8} />
+            <SearchBox className='input'/>
+            <SortBy
+              defaultRefinement="ingredients_NAME"
+              items={[
+                {label: "Name Asc.", value: "ingredients_NAME"},
+                {label: "Name Desc.", value: "ingredients_name_desc"}
+              ]}
+            />
+            <Hits hitComponent={Cocktails}/>
 	      </div>
-	      <div className="right-panel">
-	      <SearchBox className='input'/>
-	      <SortBy
-	  defaultRefinement="ingredients_NAME"
-	  items={[
-	      {label: "", value: "ingredients_NAME"},
-	      {label: "Name Asc.", value: "ingredients_name_asc"},
-	      {label: "Name Desc.", value: "ingredients_name_desc"}
-	  ]}
-	      />
-	      <Hits hitComponent={Cocktails}/>
-	      </div>
-            
-          </InstantSearch>
-
-
+        </InstantSearch>
       </div>
     );
   }
